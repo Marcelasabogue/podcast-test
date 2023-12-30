@@ -12,16 +12,16 @@ jobs:
          python-version: '3.10'
       - name: Install Dependencies
         run: |
-          python -m pip install --update pip
+          python -m pip install --upgrade pip
           pip install pyyaml
       - name: Run Feed Generator
         run: python feed.py
-      - name: Puh Repo
+      - name: Push Repo
         run: |
          git config user.name github-actions
-         git config user.email githubactions@github.com
+         git config user.email github-actions@github.com
          git add . 
-         git commit -m "modified Feed"
+         git commit -m "Modified Feed"
          git push
          
       
